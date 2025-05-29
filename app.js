@@ -17,7 +17,6 @@ const wareHouse = require('./routes/wareHouse');
 const testUnitRoutes = require('./routes/testunit');
 
 dotenv.config();
-
 const app = express();
 
 app.use(cors());
@@ -45,3 +44,7 @@ sequelize.sync({ alter: true }).then(() => {
 }).catch((err) => {
   console.error('Error syncing database: ', err);
 });
+
+sequelize.authenticate()
+    .then(() => console.log('✅ Connection has been established successfully.'))
+    .catch(err => console.error('❌ Unable to connect to the database:', err));

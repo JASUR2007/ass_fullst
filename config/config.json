@@ -1,10 +1,16 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "avnadmin",
+    "password": "AVNS_St8xQn1dTcGute8sN-Q",
+    "database": "defaultdb",
+    "host": "dernsupport-zasurmansurov6-0f8e.d.aivencloud.com",
+    "dialect": "mysql",
+    "port": 22441,
+    "dialectOptions": {
+      "ssl": {
+        "rejectUnauthorized": true
+      }
+    }
   },
   "test": {
     "username": "root",
@@ -14,10 +20,16 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "avnadmin",
+    "password": "AVNS_St8xQn1dTcGute8sN-Q",
+    "database": "defaultdb",
+    "host": "dernsupport-zasurmansurov6-0f8e.d.aivencloud.com",
+    "dialect": "mysql",
+    "port": 22441,
+    "dialectOptions": {
+      "ssl": {
+        "rejectUnauthorized": true
+      }
+    }
   }
 }
