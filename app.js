@@ -36,7 +36,7 @@ app.use('/api/tickets', TicketRoutes);
 app.use('/api', analyticsRoutes);
 app.use('/api/warehouse', wareHouse);
 app.use('/api/testunits', testUnitRoutes);
-
+app.get('/hello', (req, res) => res.send('Hello from Express on Vercel'));
 // sequelize.sync({ alter: true }).then(() => {
 //   console.log('Таблицы синхронизированы');
 //   app.listen(5000, () => {
