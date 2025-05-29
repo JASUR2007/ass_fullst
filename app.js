@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const serverless = require('serverless-http');
 
 const cors = require('cors');
 const dotenv = require('dotenv');
@@ -36,15 +37,18 @@ app.use('/api', analyticsRoutes);
 app.use('/api/warehouse', wareHouse);
 app.use('/api/testunits', testUnitRoutes);
 
-sequelize.sync({ alter: true }).then(() => {
-  console.log('Таблицы синхронизированы');
-  app.listen(5000, () => {
-    console.log('Server running on port 5000');
-  });
-}).catch((err) => {
-  console.error('Error syncing database: ', err);
-});
+// sequelize.sync({ alter: true }).then(() => {
+//   console.log('Таблицы синхронизированы');
+//   app.listen(5000, () => {
+//     console.log('Server running on port 5000');
+//   });
+// }).catch((err) => {
+//   console.error('Error syncing database: ', err);
+// });
 
 sequelize.authenticate()
     .then(() => console.log('✅ Connection has been established successfully.'))
-    .catch(err => console.error('❌ Unable to connect to the database:', err));
+    .catch(err => console.error('❌ Unable   to connect to the database:', err));
+
+
+module.exports.handler = serverless(app);
